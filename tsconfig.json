@@ -1,0 +1,18 @@
+{
+  "exclude": ["node_modules", "dist", "logs", "config"],
+  "compilerOptions": {
+    "declaration": true,
+    "rootDir": "./dist",
+    "target": "es6",
+    "lib": ["es6", "dom", "es2017"],
+    "module": "commonjs",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "watch": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false
+  }
+}
