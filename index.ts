@@ -18,6 +18,14 @@ app.use(cors());
 let openai: any;
 setupApi();
 
+app.get("/", async (req: any, res: any) => {
+  res.json({
+    code: 200,
+    data: '1',
+    error: null
+  });
+});
+
 app.get("/api/models", async (req: any, res: any) => {
 
   const modelList = await getModelList();
