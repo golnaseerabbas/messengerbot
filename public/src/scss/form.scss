@@ -1,0 +1,38 @@
+.input-group {
+	svg {
+		width: 16px;
+		height: 16px;
+	}
+
+	.input-group-text {
+		font-size: $default-font-size;
+		background: none;
+		border-width: 2px;
+		border-radius: .50rem;
+	}
+}
+
+.custom-file {
+	.custom-file-label {
+		border-radius: .50rem;
+		border-width: 2px;
+		&:after {
+			background: none;
+		}
+	}
+}
+
+.form-control {
+	border-radius: .50rem;
+	font-size: $default-font-size;
+	border: 2px solid #dddddd;
+
+	&:focus {
+		box-shadow: none;
+		border-color: $color-primary !important;
+	}
+}
+
+textarea {
+	min-height: 50px;
+}

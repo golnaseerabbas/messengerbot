@@ -1,4 +1,5 @@
 import { createRequire } from "module";
+import path = require("path");
 import { setgroups } from "process";
 const express = require("express");
 const puppeteer = require("puppeteer");
@@ -14,16 +15,13 @@ const PORT = 4000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
+app.use(express.static('public'))
 
 let openai: any;
 setupApi();
 
 app.get("/", async (req: any, res: any) => {
-  res.json({
-    code: 200,
-    data: '1',
-    error: null
-  });
+  res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 app.get("/api/models", async (req: any, res: any) => {

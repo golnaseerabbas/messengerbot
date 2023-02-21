@@ -1,0 +1,87 @@
+.modal-content {
+	border-radius: .50rem;
+	border: none;
+	box-shadow: none;
+	overflow: hidden;
+
+	.modal-header {
+		align-items: center;
+		padding: 20px 30px;
+
+		.modal-title {
+			display: flex;
+			align-items: center;
+			line-height: 13px;
+			font-weight: 400;
+
+			i, .avatar {
+				margin-right: .7rem;
+				font-size: $default-font-size + 3;
+			}
+
+			svg {
+				width: 18px;
+				height: 18px
+			}
+
+			& + button {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-shadow: none;
+				margin: 0;
+				padding: 0;
+				width: 30px;
+				height: 30px;
+				color: #999999;
+				opacity: 1;
+			}
+		}
+	}
+
+	.modal-body {
+		padding: 30px;
+	}
+
+	.modal-footer {
+		border-top: none;
+		padding: 30px;
+		padding-top: 0;
+	}
+}
+
+.modal.fade .modal-dialog.modal-dialog-zoom {
+	-webkit-transform: translate(0, 0) scale(.90);
+	transform: translate(0, 0) scale(.90);
+}
+
+.modal.show .modal-dialog.modal-dialog-zoom {
+	-webkit-transform: translate(0, 0) scale(1);
+	transform: translate(0, 0) scale(1);
+}
+
+.call {
+	text-align: center;
+
+	.modal-content {
+
+		.modal-body {
+			padding: 50px 0;
+		}
+	}
+
+	.action-button {
+		margin-top: 3rem;
+
+		.btn {
+			width: 70px;
+			height: 70px;
+			margin: 0 15px;
+
+			svg {
+				width: 28px;
+				height: 28px
+			}
+		}
+	}
+}

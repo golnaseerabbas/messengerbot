@@ -1,0 +1,125 @@
+@media screen and (max-width: 992px) {
+	header.main-header {
+		#logo {
+			width: auto;
+			background: none;
+		}
+
+		.header-nav {
+			display: none;
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 999;
+			background: white;
+			width: 70%;
+			box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+
+			.nav {
+				display: block;
+
+				li {
+					a {
+						color: black;
+						height: auto;
+						line-height: inherit;
+						display: block;
+						padding: 15px 30px;
+					}
+				}
+			}
+
+			&.open {
+				display: block;
+			}
+		}
+
+		.navbar-toggler {
+			display: block;
+		}
+	}
+	.layout .content {
+		.chat {
+			display: none;
+			position: fixed;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 997;
+
+			&.show {
+				display: flex;
+			}
+
+			.chat-footer {
+				padding: 0;
+
+				form {
+					border-radius: 0;
+				}
+			}
+		}
+	}
+
+	.sidebar {
+		transition: all .3s;
+		width: 100% !important;
+
+		form {
+			padding-top: 0 !important;
+		}
+
+		.list-group-item {
+			&.active-chat {
+				&:after {
+					display: none !important;
+				}
+
+				.users-list-body {
+					p {
+						font-weight: normal !important;
+						color: inherit !important;
+					}
+				}
+			}
+
+			.users-list-body {
+				p {
+					white-space: normal !important;
+					text-overflow: inherit !important;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.layout {
+		height: calc(100vh - #{$header-height} - 56px);
+
+		.content {
+			.chat {
+				.chat-body {
+					.messages {
+						.message-item {
+							max-width: 100% !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	body.form-membership {
+		padding: 1.5rem;
+
+		.form-wrapper {
+			padding: 2rem;
+			width: 100% !important;
+			margin: 0;
+		}
+	}
+}
+

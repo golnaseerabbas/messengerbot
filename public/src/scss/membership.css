@@ -1,0 +1,20 @@
+body.form-membership {
+  padding: 2rem 0;
+  background-color: #dddddd; }
+  body.form-membership .form-wrapper {
+    background-color: white;
+    padding: 3rem;
+    border-radius: .50rem;
+    width: 430px;
+    margin: 4rem auto;
+    text-align: center; }
+    body.form-membership .form-wrapper .logo {
+      text-align: center;
+      margin-bottom: 3rem; }
+    body.form-membership .form-wrapper h5 {
+      text-align: center;
+      margin-bottom: 2rem; }
+    body.form-membership .form-wrapper form .form-control {
+      margin-bottom: 1.5rem; }
+    body.form-membership .form-wrapper hr {
+      margin: 2rem 0; }
