@@ -28,21 +28,31 @@ app.get("/", async (req: any, res: any) => {
 
 app.get("/api/models", async (req: any, res: any) => {
 
-  const modelList = await getModelList();
+  try{
 
-  if (modelList.error) {
+    const modelList = await getModelList();
+
+    if (modelList.error) {
+      res.json({
+        code: 400,
+        data: null,
+        error: modelList.error
+      });
+    }
+  
+    res.json({
+      code: 200,
+      data: modelList.data,
+      error: null
+    });
+  } catch(error: any){
     res.json({
       code: 400,
       data: null,
-      error: modelList.error
+      error: error
     });
   }
-
-  res.json({
-    code: 200,
-    data: modelList.data,
-    error: null
-  });
+ 
 });
 
 app.get("/api/status", async (req: any, res: any) => {
