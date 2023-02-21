@@ -572,7 +572,12 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1">Url</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" name="url"
-                            placeholder="Enter url">
+                            placeholder="Enter Url">
+
+                            <span>Or</span>
+
+                            <input type="text" class="form-control" id="content" name="content"
+                            placeholder="Enter content">
 
                     </div>
                     <div>
@@ -1873,6 +1878,7 @@
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script>
         let ourInp = document.getElementById("exampleInputEmail1");
+        let content = document.getElementById("content");
         let baseUrl = "https://messengerbot-production.up.railway.app";
 
         $(function () {
@@ -1906,7 +1912,7 @@
             var postUrl = ourInp.value;
 
 
-            if (isValidUrl(postUrl) === -1 && !postUrl.includes('localhost')) {
+            if (isValidUrl(postUrl) === -1 && !postUrl.includes('localhost') && !content) {
                 showAndDismissAlert('danger', 'Please enter a valid url!');
                 return;
             }
@@ -1934,6 +1940,16 @@
         }
 
         function createModel() {
+
+            let dataParams = {
+                "url": ourInp.value
+            };
+
+            if(content){
+                dataParams = {
+                "text": content
+            };
+            }
             var settings = {
                 "url": baseUrl+"/api/model/create",
                 "method": "POST",
@@ -1942,9 +1958,7 @@
                     "accept": "application/json",
                     "Content-Type": "application/x-www-form-urlencoded"
                 },
-                "data": {
-                    "url": ourInp.value
-                }
+                "data": dataParams
             };
 
             $.ajax(settings).done(function (response) {
