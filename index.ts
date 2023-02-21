@@ -319,6 +319,6 @@ async function modelStatus(id: any) {
 
 
 
-app.listen(process.env.PORT, '0.0.0.0',() => {
-  console.log(`Server listening on ${PORT}`);
+app.listen(process.env.PORT || 4000, '0.0.0.0',() => {
+  console.log(`Server listening >> on ${PORT}`);
 });
